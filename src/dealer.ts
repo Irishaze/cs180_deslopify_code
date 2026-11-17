@@ -1,7 +1,6 @@
-import { Participant } from "./participant.js";
+import { createParticipant } from "./participant.js";
 
-/** The dealer. They play by fixed rules and never bet. */
-export class Dealer extends Participant {
+export class createDealer extends createParticipant {
   constructor() {
     super("Dealer");
   }

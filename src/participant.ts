@@ -1,22 +1,20 @@
-import { Card } from "./card.js";
+import { createCard } from "./card.js";
 import { Hand } from "./hand.js";
 
-/** Anything in the game that can hold cards. */
 export interface ICardHolder {
-  receiveCard(card: Card): void;
+  receiveCard(card: createCard): void;
   resetCards(): void;
 }
 
-/** Someone sitting at the table: they have a name and a hand. Shared by Player and Dealer. */
-export abstract class Participant implements ICardHolder {
+export abstract class createParticipant implements ICardHolder {
   name: string;
-  hand: Hand<Card> = new Hand<Card>();
+  hand: Hand<createCard> = new Hand<createCard>();
 
   constructor(name: string) {
     this.name = name;
   }
 
-  getHand(): Hand<Card> {
+  getHand(): Hand<createCard> {
     return this.hand;
   }
 
@@ -24,7 +22,7 @@ export abstract class Participant implements ICardHolder {
     return this.name;
   }
 
-  receiveCard(card: Card): void {
+  receiveCard(card: createCard): void {
     this.hand.add(card);
   }
 

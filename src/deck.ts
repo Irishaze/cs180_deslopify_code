@@ -1,14 +1,12 @@
-import { Card } from "./card.js";
+import { createCard } from "./card.js";
 
 const SUITS = ["Spades", "Hearts", "Diamonds", "Clubs"];
-const RANKS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+const NUMBERS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 const RESHUFFLE_BELOW = 15;
 
-// Here's the updated Deck class with improved shuffling logic:
-
-/** A standard 52-card deck. It reshuffles itself when it gets low. */
+// The deck reshuffles itself when the number of cards gets low.
 export class Deck {
-  private cards: Card[] = [];
+  private cards: createCard[] = [];
 
   constructor() {
     this.refill();
@@ -17,8 +15,8 @@ export class Deck {
   private refill(): void {
     this.cards = [];
     for (const suit of SUITS) {
-      for (const rank of RANKS) {
-        this.cards.push(new Card(rank, suit));
+      for (const num of NUMBERS) {
+        this.cards.push(new createCard(num, suit));
       }
     }
     // Fisher-Yates shuffle: swap each card with a random card at or before it
@@ -28,7 +26,7 @@ export class Deck {
     }
   }
 
-  draw(): Card {
+  draw(): createCard {
     if (this.getRemainingCards() < RESHUFFLE_BELOW) {
       console.log("(The dealer shuffles a fresh deck.)");
       this.refill();

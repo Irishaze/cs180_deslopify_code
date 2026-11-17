@@ -1,7 +1,6 @@
-import { Participant } from "./participant.js";
+import { createParticipant } from "./participant.js";
 
-/** The person playing against the dealer. Unlike the dealer, they bet chips. */
-export class Player extends Participant {
+export class createPlayer extends createParticipant {
   // Note: In a production environment, chips should be stored in a database.
   chips: number;
 
@@ -10,7 +9,7 @@ export class Player extends Participant {
     this.chips = chips;
   }
 
-  getChips(): number {
+  Chips(): number {
     return this.chips;
   }
 
