@@ -4,13 +4,13 @@ A small command-line Blackjack game in TypeScript. You play against the dealer.
 
 ## Run it
 
-You need [Node.js](https://nodejs.org) 20 or newer. Check with `node -v`.
+You need [Node.js](https://nodejs.org) 20 or newer and [pnpm](https://pnpm.io/installation). Check with `node -v` and `pnpm -v`. If you don't have pnpm, install it with `npm install -g pnpm`.
 
 From this folder:
 
 ```bash
-npm install       # first time only
-npm start         # play
+pnpm install      # first time only
+pnpm start        # play
 ```
 
 ## Your answers
